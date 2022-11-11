@@ -5,3 +5,14 @@
   box-sizing: border-box;
 }
 
+.main-container{
+  width: 80vw;
+  margin: auto;
+  padding-top: 80px;
+  height: 95vh;
+}
+
+.header{
+  flex-direction: column;
+  margin-bottom: 20px
+}

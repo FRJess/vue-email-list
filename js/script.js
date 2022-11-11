@@ -28,26 +28,20 @@ createApp({
 
   methods:{
     getApi(){
+      this.isLoaded = false;
+      this.mails = [];
       if(this.counter < 10){
         axios.get(this.apiUrl)
         .then( result => {
-        console.log(result.data);
-        this.mails.push(result.data.response);
+        // console.log(result.data);
+          this.mails.push(result.data.response);
         })
         return this.getApi (++this.counter)
       }
       this.isLoaded = true;
       this.counter = 0;
-      
     },
-    
-    // mailList(number){
-    //   this.isLoaded = false;
-    //   for (i = 0; i < number; i++){
-    //     this.getApi();
-    //   }
-    // }
-    
+  
   },
   
   mounted(){

@@ -35,13 +35,30 @@
 <!-- Inizio Body -->
 <body>
 
-  <div id="app" class="container p-5">
-    <h1>{{title}}</h1>
-    <ul v-if="isLoaded">
-      <li v-for="(mail, index) in mails">{{mail}}</li>
-    </ul>
+  <div id="app" class="main-container p-5">
 
-    <h3 v-else=>
+    <div class="header d-flex align-items-center">
+      <div class="page-title">
+        <h1>{{title}}</h1>
+      </div>
+      <div class="mail-button">
+        <button type="button" 
+        class="btn btn-outline-success mx-4 py-1"
+        @click="getApi()">Crea mailing list</button>
+      </div>
+    </div>
+
+    <div class="mailing-list m-auto text-center" v-if="isLoaded">
+      <ul class="list-group">
+        <li 
+        v-for="mail in mails"
+        class="list-group-item">{{mail}}</li>
+      </ul>
+
+    </div>
+
+
+    <h3 v-else>
       <div class="lds-hourglass"></div>
     </h3>
 
