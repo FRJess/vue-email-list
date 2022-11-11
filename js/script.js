@@ -33,7 +33,7 @@ createApp({
       if(this.counter < 10){
         axios.get(this.apiUrl)
         .then( result => {
-        // console.log(result.data);
+        console.log(result.data);
           this.mails.push(result.data.response);
         })
         return this.getApi (++this.counter)

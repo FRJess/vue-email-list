@@ -48,8 +48,8 @@
       </div>
     </div>
 
-    <div class="mailing-list m-auto" v-if="isLoaded">
-      <ul class="list-group">
+    <div class="mailing-list m-auto" >
+      <ul class="list-group" v-if="isLoaded">
         <li 
         v-for="mail in mails"
         class="list-group-item">{{mail}}</li>
@@ -58,9 +58,7 @@
     </div>
 
 
-    <h3 v-else>
-      <div class="lds-hourglass"></div>
-    </h3>
+    <h3 v-else>Loading...</h3>
 
   </div>
 
