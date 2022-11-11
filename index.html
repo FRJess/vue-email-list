@@ -29,11 +29,19 @@
   <!-- VUE -->
   <script src="https://unpkg.com/vue@3"></script>
 
-  <title>Modello</title>
+  <title>Mailing list</title>
 </head>
 
 <!-- Inizio Body -->
 <body>
+
+  <div id="app" class="container p-5">
+    <h1>{{title}}</h1>
+    <ul v-if="">
+      <li v-for="(mail, index) in mails">{{mail}}</li>
+    </ul>
+
+  </div>
 
   <!-- JS -->
   <script src="js/script.js"></script>
