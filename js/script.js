@@ -20,35 +20,37 @@ createApp({
       title: 'Mailing list',
       apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
       mails: [],
-      numberOfMail: 10,
       isLoaded: false,
+      counter: 0,
     }
 
   },
 
   methods:{
     getApi(){
-      axios.get(this.apiUrl)
-      .then( result => {
+      if(this.counter < 10){
+        axios.get(this.apiUrl)
+        .then( result => {
         console.log(result.data);
         this.mails.push(result.data.response);
-        this.isLoaded = true;
-      })
-    },
-
-    mailList(number){
-      for (i = 0; i < number; i++){
-        this.getApi();
+        })
+        return this.getApi (++this.counter)
       }
-
-    }
-
+      this.isLoaded = true;
+      this.counter = 0;
+      
+    },
+    
+    // mailList(number){
+    //   this.isLoaded = false;
+    //   for (i = 0; i < number; i++){
+    //     this.getApi();
+    //   }
+    // }
+    
   },
-
-
-
+  
   mounted(){
-    this.mailList(this.numberOfMail);
-
+    this.getApi();
   }
 }).mount('#app')

@@ -37,9 +37,13 @@
 
   <div id="app" class="container p-5">
     <h1>{{title}}</h1>
-    <ul v-if="">
+    <ul v-if="isLoaded">
       <li v-for="(mail, index) in mails">{{mail}}</li>
     </ul>
+
+    <h3 v-else=>
+      <div class="lds-hourglass"></div>
+    </h3>
 
   </div>
 
