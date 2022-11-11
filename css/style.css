@@ -16,3 +16,15 @@
   flex-direction: column;
   margin-bottom: 20px
 }
+
+h1{
+  font-size: 4rem;
+}
+
+li{
+  font-size: 0.9rem;
+}
+
+li:hover{
+  background-color:silver;
+}

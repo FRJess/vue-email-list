@@ -39,7 +39,7 @@
 
     <div class="header d-flex align-items-center">
       <div class="page-title">
-        <h1>{{title}}</h1>
+        <h1 class="py-2">{{title}}</h1>
       </div>
       <div class="mail-button">
         <button type="button" 
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div class="mailing-list m-auto text-center" v-if="isLoaded">
+    <div class="mailing-list m-auto" v-if="isLoaded">
       <ul class="list-group">
         <li 
         v-for="mail in mails"
