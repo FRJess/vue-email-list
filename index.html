@@ -49,7 +49,7 @@
     </div>
 
     <div class="mailing-list m-auto" >
-      <ul class="list-group" v-if="isLoaded">
+      <ul class="list-group" v-if="mails.length === 10">
         <li 
         v-for="mail in mails"
         class="list-group-item">{{mail}}</li>
