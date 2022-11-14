@@ -17,8 +17,6 @@ createApp({
   // FUNCTIONS
   methods:{
     getApi(){
-      this.isLoaded = false;
-      this.mails = [];
 
       //cycle to add 10 mails
       for(let i = 1; i <= 10; i++){
